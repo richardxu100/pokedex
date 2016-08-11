@@ -28,6 +28,10 @@ module.exports = {
         loader: 'style-loader!css-loader',
         include: path.join(__dirname, 'node_modules'), // this also includes flexboxgrid
         exclude: /flexboxgrid/ // so we are excluding it
+      },
+      { // sass loader needs node sass, so we can still use global styles
+        test: /\.sass$/,
+        loaders: ["style", "css", "sass"]
       }
     ]
   },
