@@ -3,7 +3,7 @@ import ReactRouter, { Router, Route, IndexRoute, browserHistory } from 'react-ro
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import PokemonContainer from './containers/PokemonContainer';
 import MainLayout from './components/mainLayout';
-import './styles/style.css';
+// import './styles/style.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
