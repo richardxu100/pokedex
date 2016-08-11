@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
+    "build-css": "node-sass --include-path sass client/styles/style.sass client/styles/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,10 +13,12 @@
   "dependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
+    "css-loader": "^0.23.1",
     "material-ui": "^0.15.3",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-router": "^2.6.1",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.1"
   },
   "devDependencies": {
