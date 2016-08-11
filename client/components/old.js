@@ -16,7 +16,7 @@ const PokemonTable = ({ pokemon }) => {
         {pokemon.map((poke, i) => {
           const { name, species, stage, type } = poke;
           return (
-            <TableRow key={i}>
+            <TableRow key={i} i={i}>
               <TableRowColumn>{name}</TableRowColumn>
               <TableRowColumn>{type}</TableRowColumn>
               <TableRowColumn>{stage}</TableRowColumn>

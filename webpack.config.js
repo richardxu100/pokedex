@@ -37,7 +37,7 @@ module.exports = {
   },
   plugins: [HTMLWebpackPluginConfig],
   node: {
-    console: 'empty',
+    // console: 'empty', // never do this ever!!! It makes console.log not work! 
     fs: 'empty',
     net: 'empty',
     tls: 'empty'

@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 
 import rootReducer from './reducers/index';
 
-import pokemon from './data/pokemon';
+import { pokemon } from './data/pokemon';
 
 const defaultState = {
   pokemon

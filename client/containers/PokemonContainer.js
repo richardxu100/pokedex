@@ -14,7 +14,7 @@ export default class PokemonContainer extends Component {
             fullWidth={true}
             />
         </Row>
-        <PokemonTable />
+        <PokemonTable pokemon={this.props.pokemon}/>
       </Grid>
     )
   }

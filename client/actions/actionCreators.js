@@ -1,3 +1,6 @@
 export function filterPokemon(inputText) {
-  return null;
+  return {
+    type: 'FILTER_POKEMON',
+    inputText
+  };
 }

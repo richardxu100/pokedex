@@ -1,4 +1,4 @@
-const pokemon = [
+export const pokemon = [
 	{ name : "MissingNo", type : "blank", stage : 100, caught : 0, species : "Glitch Pokemon"},
 	{ name : "Bulbasaur", type : "grass", stage : 0, caught : 0, species : "Seed Pokemon"},
 	{ name : "Ivysaur", type : "grass", stage : 3, caught : 0, species : "Seed Pokemon"},
@@ -152,5 +152,3 @@ const pokemon = [
 	{ name : "Mewtwo", type : "psychic", stage : 6, caught : 0, species : "Genetic Pokemon"},
 	{ name : "Mew", type : "psychic", stage : 7, caught : 0, species : "New Species Pokemon"}
 ];
-
-export default pokemon;
