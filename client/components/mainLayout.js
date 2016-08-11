@@ -8,7 +8,7 @@ const MainLayout = (props) => {
         title="Pokedex"
         iconClassNameRight="muidocs-icon-navigation-expand-more"
       />
-      {props.children}
+      { React.cloneElement(props.children, props) }
     </div>
   )
 }
