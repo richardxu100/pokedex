@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
+import PokemonRow from './pokemonRow';
 
 const PokemonTable = ({ pokemon }) => {
   return (
@@ -16,17 +17,18 @@ const PokemonTable = ({ pokemon }) => {
         {pokemon.map((poke, i) => {
           const { name, species, stage, type } = poke;
           return (
-            <TableRow key={i}>
+            <PokemonRow key={i} poke={poke}>
               <TableRowColumn>{name}</TableRowColumn>
               <TableRowColumn>{type}</TableRowColumn>
               <TableRowColumn>{stage}</TableRowColumn>
               <TableRowColumn>{species}</TableRowColumn>
-            </TableRow>
+            </PokemonRow>
           )
         })}
       </TableBody>
     </Table>
   )
 }
+
 
 export default PokemonTable;
