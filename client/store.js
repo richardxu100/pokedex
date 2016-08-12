@@ -7,7 +7,8 @@ import rootReducer from './reducers/index';
 import { pokemon } from './data/pokemon';
 
 const defaultState = {
-  pokemon
+  pokemon,
+  filteredPokemon: pokemon
 };
 
 const store = createStore(rootReducer, defaultState);

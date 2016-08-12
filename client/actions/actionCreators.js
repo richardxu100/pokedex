@@ -1,6 +1,6 @@
-export function filterPokemon(inputText) {
+export function filterPokemon(name) {
   return {
     type: 'FILTER_POKEMON',
-    inputText
+    name
   };
 }

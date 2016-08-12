@@ -1,10 +1,14 @@
 import React, { PropTypes } from 'react';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
-import PokemonRow from './pokemonRow';
+import LazyLoad from 'react-lazy-load';
 
+// just giving an unknown prop to tablerow, it's possible but you get an error warning
 const PokemonTable = ({ pokemon }) => {
   return (
-    <Table multiSelectable={true}>
+    <Table
+      multiSelectable={true}
+      onCellClick={console.log('clicked in the table')}
+      height='500px'>
       <TableHeader>
         <TableRow>
           <TableHeaderColumn>Name</TableHeaderColumn>
@@ -13,18 +17,21 @@ const PokemonTable = ({ pokemon }) => {
           <TableHeaderColumn>Species</TableHeaderColumn>
         </TableRow>
       </TableHeader>
+
       <TableBody stripedRows={true}>
-        {pokemon.map((poke, i) => {
+
+        {pokemon && pokemon.map((poke, i) => {
           const { name, species, stage, type } = poke;
           return (
-            <PokemonRow key={i} poke={poke}>
+            <TableRow key={i} poke={poke}>
               <TableRowColumn>{name}</TableRowColumn>
               <TableRowColumn>{type}</TableRowColumn>
               <TableRowColumn>{stage}</TableRowColumn>
               <TableRowColumn>{species}</TableRowColumn>
-            </PokemonRow>
+            </TableRow>
           )
         })}
+
       </TableBody>
     </Table>
   )
