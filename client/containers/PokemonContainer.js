@@ -36,8 +36,10 @@ export default class PokemonContainer extends Component {
           onRowClick={this.handleRowClick}
           />
         <Drawer open={this.props.open}>
-          <MenuItem>Menu Item</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem><b>Your PC</b></MenuItem>
+          {this.props.caughtPokemon.map((pokeName) => {
+            return <MenuItem>{pokeName}</MenuItem>
+          })}
         </Drawer>
       </Grid>
     )
