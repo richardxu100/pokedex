@@ -5,23 +5,12 @@ import MainLayout from '../components/mainLayout';
 
 function mapStateToProps(state) {
   const { pokemon, searchText } = state;
-  if (searchText === '') {
-    return {
-      pokemon,
-      searchText
-    }
-  }
-  else {
-    const filteredPokemon = pokemon.filter((poke) => {
+  const filteredPokemon = pokemon.filter((poke) => {
       return poke.name.toLowerCase().includes(searchText.toLowerCase())
     })
-    return {
-      pokemon: filteredPokemon,
-      searchText
-    }
-  }
-    // pokemon: state.pokemon, // maybe in the future remove the input reducer
-    // searchText: state.searchText // make sure to map state to props or the mainLayout won't have the prop ahhh!
+  return searchText === '' ?
+    { pokemon, searchText } :
+    { pokemon: filteredPokemon, searchText }
 }
 
 function mapDispatchToProps(dispatch) { // allows actionCreators to dispatch events
