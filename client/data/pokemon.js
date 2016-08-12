@@ -1,4 +1,4 @@
-export const pokemon = [
+export const pokemon = [ // maybe add a searchText prop
 	{ name : "MissingNo", type : "blank", stage : 100, caught : 0, species : "Glitch Pokemon"},
 	{ name : "Bulbasaur", type : "grass", stage : 0, caught : 0, species : "Seed Pokemon"},
 	{ name : "Ivysaur", type : "grass", stage : 3, caught : 0, species : "Seed Pokemon"},

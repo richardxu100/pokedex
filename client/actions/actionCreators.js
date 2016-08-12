@@ -1,6 +1,6 @@
-export function filterPokemon(name) {
+export function changeInput(searchText) {
   return {
-    type: 'FILTER_POKEMON',
-    name
+    type: 'CHANGE_INPUT',
+    searchText
   };
 }

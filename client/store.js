@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore, compose } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 
@@ -8,10 +8,15 @@ import { pokemon } from './data/pokemon';
 
 const defaultState = {
   pokemon,
-  filteredPokemon: pokemon
+  searchText: '',
+  // caughtPokemon : []
 };
 
-const store = createStore(rootReducer, defaultState);
+const enhancers = compose(
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+);
+
+const store = createStore(rootReducer, defaultState, enhancers);
 export const history = syncHistoryWithStore(browserHistory, store);
 
 export default store;

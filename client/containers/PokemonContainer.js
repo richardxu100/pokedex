@@ -9,7 +9,7 @@ export default class PokemonContainer extends Component {
   handleChange = (e) => {
     e.preventDefault();
     console.log(e.target.value);
-    this.props.filterPokemon(e.target.value);
+    this.props.changeInput(e.target.value);
   }
 
   render() {
