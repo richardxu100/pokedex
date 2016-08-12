@@ -8,14 +8,15 @@ export default class PokemonContainer extends Component {
 
   handleChange = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
+    // console.log(e.target.value);
     this.props.changeInput(e.target.value);
   }
 
   handleRowClick = (rowNumber) => { // amazing, material-ui gives you the prop of the row
-    // e.preventDefault();
-    console.log('handle row click works');
-    console.log('rowNumber is', rowNumber);
+    // e.stopPropagation();
+    // console.log('handle row click works');
+    // console.log('rowNumber is', rowNumber);
+    this.props.catchPokemon(rowNumber);
   }
 
   render() {

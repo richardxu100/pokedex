@@ -8,7 +8,7 @@ const PokemonTable = ({ pokemon, onRowClick }) => {
     <Table
       multiSelectable={true}
       onRowSelection={onRowClick}
-      height='500px'>
+      >
       <TableHeader>
         <TableRow>
           <TableHeaderColumn>Name</TableHeaderColumn>
@@ -23,7 +23,7 @@ const PokemonTable = ({ pokemon, onRowClick }) => {
         {pokemon && pokemon.map((poke, i) => {
           const { name, species, stage, type } = poke;
           return (
-            <TableRow key={i} poke={poke}>
+            <TableRow key={i}>
               <TableRowColumn>{name}</TableRowColumn>
               <TableRowColumn>{type}</TableRowColumn>
               <TableRowColumn>{stage}</TableRowColumn>

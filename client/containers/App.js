@@ -5,12 +5,29 @@ import MainLayout from '../components/mainLayout';
 
 function mapStateToProps(state) {
   const { pokemon, searchText, caughtPokemon } = state;
-  const filteredPokemon = pokemon.filter((poke) => {
+
+  const filteredPokemon = pokemon.filter(poke => {
     return poke.name.toLowerCase().includes(searchText.toLowerCase())
   })
+
+  const caughtNames = caughtPokemon.map(rowNumber => {
+    return pokemon[rowNumber].name;
+  })
+
+  console.log('Caught pokemon', caughtPokemon);
+  console.log('Caught names', caughtNames);
+
   return searchText === '' ?
-    { pokemon, searchText, caughtPokemon } :
-    { pokemon: filteredPokemon, searchText, caughtPokemon }
+    {
+      pokemon,
+      searchText,
+      caughtPokemon: caughtNames
+    } :
+    {
+      pokemon: filteredPokemon,
+      searchText,
+      caughtPokemon: caughtNames
+    }
 }
 
 function mapDispatchToProps(dispatch) { // allows actionCreators to dispatch events

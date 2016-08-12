@@ -4,7 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 
 const MainLayout = (props) => {
   let numberCaught = props.caughtPokemon.length;
-  console.log('number caught:', numberCaught);
+  // console.log('number caught:', numberCaught);
   return (
     <div>
       <AppBar

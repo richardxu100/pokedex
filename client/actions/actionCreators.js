@@ -5,9 +5,9 @@ export function changeInput(searchText) {
   };
 }
 
-export function catchPokemon(index) {
+export function catchPokemon(rowNumbers) {
   return {
     type: 'CATCH_POKEMON',
-    index
+    rowNumbers // the plural of rowNumber because the data comes in as an array
   }
 }
