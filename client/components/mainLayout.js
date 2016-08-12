@@ -9,7 +9,8 @@ const MainLayout = (props) => {
     <div>
       <AppBar
         title="Pokedex"
-        iconElementRight={<FlatButton label={`PC (${numberCaught})`} />}
+        iconElementRight={<FlatButton label={`PC (${numberCaught})`}
+                                      onClick={props.toggleDrawer}/>}
       />
       { React.cloneElement(props.children, props) }
     </div>

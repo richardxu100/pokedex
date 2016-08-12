@@ -11,3 +11,9 @@ export function catchPokemon(rowNumbers) {
     rowNumbers // the plural of rowNumber because the data comes in as an array
   }
 }
+
+export function toggleDrawer() {
+  return {
+    type: 'TOGGLE_DRAWER'
+  }
+}

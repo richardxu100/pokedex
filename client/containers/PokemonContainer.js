@@ -3,12 +3,14 @@ import TextField from 'material-ui/TextField';
 import PokemonTable from '../components/pokemonTable';
 import { Grid, Row, Col } from 'react-flexbox-grid/lib/index';
 import styles from '../styles/styles';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import RaisedButton from 'material-ui/RaisedButton';
 
 export default class PokemonContainer extends Component {
 
   handleChange = (e) => {
     e.preventDefault();
-    // console.log(e.target.value);
     this.props.changeInput(e.target.value);
   }
 
@@ -33,6 +35,10 @@ export default class PokemonContainer extends Component {
           pokemon={this.props.pokemon}
           onRowClick={this.handleRowClick}
           />
+        <Drawer open={this.props.open}>
+          <MenuItem>Menu Item</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+        </Drawer>
       </Grid>
     )
   }

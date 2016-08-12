@@ -4,7 +4,7 @@ import * as actionCreators from '../actions/actionCreators';
 import MainLayout from '../components/mainLayout';
 
 function mapStateToProps(state) {
-  const { pokemon, searchText, caughtPokemon } = state;
+  const { pokemon, searchText, caughtPokemon, open } = state;
 
   const filteredPokemon = pokemon.filter(poke => {
     return poke.name.toLowerCase().includes(searchText.toLowerCase())
@@ -21,12 +21,14 @@ function mapStateToProps(state) {
     {
       pokemon,
       searchText,
-      caughtPokemon: caughtNames
+      caughtPokemon: caughtNames,
+      open
     } :
     {
       pokemon: filteredPokemon,
       searchText,
-      caughtPokemon: caughtNames
+      caughtPokemon: caughtNames,
+      open
     }
 }
 
