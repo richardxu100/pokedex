@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
-import LazyLoad from 'react-lazy-load';
+// import LazyLoad from 'react-lazy-load';
 
 // just giving an unknown prop to tablerow, it's possible but you get an error warning
-const PokemonTable = ({ pokemon }) => {
+const PokemonTable = ({ pokemon, onRowClick }) => {
   return (
     <Table
       multiSelectable={true}
-      onCellClick={console.log('clicked in the table')}
+      onRowSelection={onRowClick}
       height='500px'>
       <TableHeader>
         <TableRow>

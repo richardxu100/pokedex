@@ -9,7 +9,7 @@ import { pokemon } from './data/pokemon';
 const defaultState = {
   pokemon,
   searchText: '',
-  // caughtPokemon : []
+  caughtPokemon : []
 };
 
 const enhancers = compose(

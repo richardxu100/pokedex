@@ -6,6 +6,7 @@ import searchText from './searchText';
 const rootReducer = combineReducers({
   pokemon,
   searchText, // where the
+  caughtPokemon: pokemon,
   routing: routerReducer // so you can use time travel features easily with redux/react-router
 });
 

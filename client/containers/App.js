@@ -4,13 +4,13 @@ import * as actionCreators from '../actions/actionCreators';
 import MainLayout from '../components/mainLayout';
 
 function mapStateToProps(state) {
-  const { pokemon, searchText } = state;
+  const { pokemon, searchText, caughtPokemon } = state;
   const filteredPokemon = pokemon.filter((poke) => {
-      return poke.name.toLowerCase().includes(searchText.toLowerCase())
-    })
+    return poke.name.toLowerCase().includes(searchText.toLowerCase())
+  })
   return searchText === '' ?
-    { pokemon, searchText } :
-    { pokemon: filteredPokemon, searchText }
+    { pokemon, searchText, caughtPokemon } :
+    { pokemon: filteredPokemon, searchText, caughtPokemon }
 }
 
 function mapDispatchToProps(dispatch) { // allows actionCreators to dispatch events

@@ -4,3 +4,10 @@ export function changeInput(searchText) {
     searchText
   };
 }
+
+export function catchPokemon(index) {
+  return {
+    type: 'CATCH_POKEMON',
+    index
+  }
+}

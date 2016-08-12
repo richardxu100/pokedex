@@ -12,6 +12,12 @@ export default class PokemonContainer extends Component {
     this.props.changeInput(e.target.value);
   }
 
+  handleRowClick = (rowNumber) => { // amazing, material-ui gives you the prop of the row
+    // e.preventDefault();
+    console.log('handle row click works');
+    console.log('rowNumber is', rowNumber);
+  }
+
   render() {
     return (
       <Grid style={styles.pokedexContainer}>
@@ -22,7 +28,10 @@ export default class PokemonContainer extends Component {
             onChange={this.handleChange}
             />
         </Row>
-        <PokemonTable pokemon={this.props.pokemon}/>
+        <PokemonTable
+          pokemon={this.props.pokemon}
+          onRowClick={this.handleRowClick}
+          />
       </Grid>
     )
   }
