@@ -14,17 +14,20 @@ function mapStateToProps(state) {
   console.log('Caught names', caughtNames);
   console.log('Caught Pokemon length', caughtPokemon.length);
 
-  var caughtNames;
+  let caughtNames;
   if (caughtPokemon[caughtPokemon.length - 1] === 'all') {
     caughtNames = pokemon.map((poke) => poke.name)
-  } else {
+  }
+  else if (caughtPokemon[caughtPokemon.length - 1] === 'none') {
+    caughtNames = [];
+  }
+  else {
     caughtNames = caughtPokemon.map(rowNumber => {
-      return pokemon[rowNumber].name;
+      if (rowNumber !== 'all' && rowNumber !== 'none') {
+        return pokemon[rowNumber].name
+      }
     })
   }
-  // const caughtNames = caughtPokemon[0] === 'all' ?
-  //   pokemon.map(poke => poke.name) :
-  //   caughtPokemon.map(rowNumber => pokemon[rowNumber].name)
 
   return searchText === '' ?
     {
