@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
 
@@ -18,6 +18,11 @@ const MainLayout = (props) => {
       { React.cloneElement(props.children, props) }
     </div>
   )
+}
+
+MainLayout.propTypes = {
+  caughtPokemon: PropTypes.array.isRequired,
+  toggleDrawer: PropTypes.func.isRequired
 }
 
 export default MainLayout;

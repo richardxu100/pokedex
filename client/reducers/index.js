@@ -7,7 +7,7 @@ import drawer from './drawer';
 
 const rootReducer = combineReducers({
   pokemon,
-  searchText, // where the
+  searchText, // searchText reducer will control the searchText state
   caughtPokemon,
   open: drawer,
   routing: routerReducer // so you can use time travel features easily with redux/react-router

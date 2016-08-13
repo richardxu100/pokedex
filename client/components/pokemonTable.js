@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
-// import LazyLoad from 'react-lazy-load';
 
 // just giving an unknown prop to tablerow, it's possible but you get an error warning
 const PokemonTable = ({ pokemon, onRowClick }) => {
@@ -38,5 +37,9 @@ const PokemonTable = ({ pokemon, onRowClick }) => {
   )
 }
 
+PokemonTable.propTypes = { // yay PropTypes work
+  pokemon: PropTypes.array.isRequired,
+  onRowClick: PropTypes.func.isRequired
+}
 
 export default PokemonTable;
