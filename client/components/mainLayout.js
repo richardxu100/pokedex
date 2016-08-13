@@ -4,14 +4,16 @@ import FlatButton from 'material-ui/FlatButton';
 
 const MainLayout = (props) => {
   // some caughtPokemon have the values 'all' or 'none' so need to filter
-  let realCaught = props.caughtPokemon.filter(poke => poke !== undefined); // filter removes the values, while map just returns undefined
+  const { caughtPokemon, toggleDrawer } = props;
+  let realCaught = caughtPokemon.filter(poke => poke !== undefined); // filter removes the values, while map just returns undefined
   let numberCaught = realCaught.length;
   return (
     <div>
       <AppBar
         title="Pokedex"
+        onLeftIconButtonTouchTap={toggleDrawer}
         iconElementRight={<FlatButton label={`PC (${numberCaught})`}
-                                      onClick={props.toggleDrawer}/>}
+                                      onClick={toggleDrawer}/>}
       />
       { React.cloneElement(props.children, props) }
     </div>
