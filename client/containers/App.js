@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
 import MainLayout from '../components/mainLayout';
 
+// specifies how to turn the redux state into container props
 function mapStateToProps(state) {
   const { pokemon, searchText, caughtPokemon, open } = state;
 
@@ -44,10 +45,12 @@ function mapStateToProps(state) {
     }
 }
 
+// only do this once, instead of multiple times to different containers
 function mapDispatchToProps(dispatch) { // allows actionCreators to dispatch events
   return bindActionCreators(actionCreators, dispatch);
 }
 
+// Creates a new `Wrapper Layout` that has the state and action creators for the container components
 const App = connect(mapStateToProps, mapDispatchToProps)(MainLayout);
 
 export default App;
