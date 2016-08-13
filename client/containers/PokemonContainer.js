@@ -15,10 +15,9 @@ export default class PokemonContainer extends Component {
   }
 
   handleRowClick = (rowNumber) => { // amazing, material-ui gives you the prop of the row
-    // e.stopPropagation();
-    // console.log('handle row click works');
-    // console.log('rowNumber is', rowNumber);
+    // e.preventDefault();
     this.props.catchPokemon(rowNumber);
+    console.log('Row number in handleRowClick', rowNumber);
   }
 
   render() {
@@ -37,8 +36,8 @@ export default class PokemonContainer extends Component {
           />
         <Drawer open={this.props.open}>
           <MenuItem><b>Your PC</b></MenuItem>
-          {this.props.caughtPokemon.map((pokeName) => {
-            return <MenuItem>{pokeName}</MenuItem>
+          {this.props.caughtPokemon.map((pokeName, i) => {
+            return <MenuItem key={i}>{pokeName}</MenuItem>
           })}
         </Drawer>
       </Grid>

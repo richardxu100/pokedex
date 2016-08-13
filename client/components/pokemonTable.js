@@ -8,6 +8,7 @@ const PokemonTable = ({ pokemon, onRowClick }) => {
     <Table
       multiSelectable={true}
       onRowSelection={onRowClick}
+      selectable={true}
       >
       <TableHeader>
         <TableRow>

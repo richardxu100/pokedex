@@ -10,12 +10,21 @@ function mapStateToProps(state) {
     return poke.name.toLowerCase().includes(searchText.toLowerCase())
   })
 
-  const caughtNames = caughtPokemon.map(rowNumber => {
-    return pokemon[rowNumber].name;
-  })
-
   console.log('Caught pokemon', caughtPokemon);
   console.log('Caught names', caughtNames);
+  console.log('Caught Pokemon length', caughtPokemon.length);
+
+  var caughtNames;
+  if (caughtPokemon[caughtPokemon.length - 1] === 'all') {
+    caughtNames = pokemon.map((poke) => poke.name)
+  } else {
+    caughtNames = caughtPokemon.map(rowNumber => {
+      return pokemon[rowNumber].name;
+    })
+  }
+  // const caughtNames = caughtPokemon[0] === 'all' ?
+  //   pokemon.map(poke => poke.name) :
+  //   caughtPokemon.map(rowNumber => pokemon[rowNumber].name)
 
   return searchText === '' ?
     {
